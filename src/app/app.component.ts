@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fron-tMongo';
+  title = 'Frontend-Servicios';
 
   constructor(private router:Router){}
 

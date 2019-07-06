@@ -20,7 +20,7 @@
                             <td>{{ cliente.clientName}}</td>
                             <td>{{ cliente.productOwner}}</td>
                                <button (click)="Editar(cliente)" class="btn btn-warning"> editar</button>
-                               <button class="btn btn-danger" style="margin-left: 10px"> Delete</button>
+                               <button (click)="Delete(cliente)"class="btn btn-danger" style="margin: 10px"> Delete</button>
                                
                         </tr>     
                      </tbody>

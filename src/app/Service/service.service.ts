@@ -11,15 +11,15 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
-  Url = 'http://localhost:8080/api/clientes'
+  Url = 'http://localhost:8080/api'
   
 
   getPersonas():Observable<Clientes[]>{
     return this.http.get<Clientes[]>(this.Url)
   }
 
-  public CreateClientes(cliente: Clientes){
-    return this.http.post<Clientes>(this.Url + "/guardar" , cliente)
+  save(cliente){
+    return this.http.post(this.Url + "/guardar" , cliente)
   }
 
   getPersonaId(id:String){
@@ -27,6 +27,9 @@ export class ServiceService {
   }
   updatePersona(cliente:Clientes){
     return this.http.put<Clientes>(this.Url+ "/actualizar"+cliente.idClient,cliente);
+  }
+  deletePersona(cliente:Clientes){
+    return this.http.delete<Clientes>(this.Url+"/delete/"+cliente.idClient)
   }
   
 }

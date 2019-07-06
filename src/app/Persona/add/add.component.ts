@@ -10,13 +10,22 @@ import { Clientes } from 'src/app/Modelo/Clientes';
 })
 export class AddComponent implements OnInit {
 
+  public clientName;
+  public productOwner;
+  
   constructor(private router:Router, private service:ServiceService ) { }
 
   ngOnInit() {
   }
 
-  Guardar(cliente: Clientes){
-    this.service.CreateClientes(cliente)
+  public enviar(){
+    const cliente = {
+      "clientName": this.clientName,
+      "productOwner": this.productOwner
+    };
+
+  
+    this.service.save(cliente)
      .subscribe(response =>{
        console.log(response)
      })

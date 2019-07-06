@@ -1,21 +1,19 @@
-<div class="container col-md-6">
-    <div class="card">
-        <div class="card-header">
-            <h3>Agregar Personas</h3>
-        </div>
-        <div class="card-body">
-            <form action="">
-                <div class="form-group">
-                    <label for="">Nombre Cliente</label>
-                    <input  [(ngModel)]="cliente.clientName" name="clientName" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                        <label for="">Nombre Owner</label>
-                        <input  [(ngModel)]="cliente.productOwner" name="nameO" type="text" class="form-control">
-                    </div>
-                <button (click)="Guardar()" class="btn btn-danger">Guardar</button>
-            </form>
-        </div>
+<form>
+    <div class="form-group">
+      <label for="nombre_Cliente">Nombre Cliente</label>
+      <input [(ngModel)]="clientName" name="nombre_Cliente" type="text" class="form-control" id="nombre_Cliente"  placeholder="Ingrese Nombre">
+      <small id="nombre_Cliente" class="form-text text-muted"></small>
     </div>
- </div>
-     
+
+    <div class="form-group">
+      <label for="product_Owner">ProductOwner</label>
+      <input [(ngModel)]="productOwner" name="product_Owner" type="text" class="form-control" id="product_Owner" placeholder="Ingrese ProductOwner">
+    </div>
+    
+
+
+
+    
+    <button (click)="enviar()" type="button"  class="btn btn-primary">Guardar</button>
+  </form>
+

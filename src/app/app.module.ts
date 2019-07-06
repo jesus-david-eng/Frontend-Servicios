@@ -11,12 +11,14 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+  
   ],
   imports: [
     BrowserModule,
