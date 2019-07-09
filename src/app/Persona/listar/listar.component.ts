@@ -16,23 +16,34 @@ export class ListarComponent implements OnInit {
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit() {
+   this.ObtenerClientes();
+  }
+
+  ObtenerClientes(){
     this.service.getPersonas()
     .subscribe(data=>{
        this.clientes=data;
+    
     })
   }
 
-  
-  Editar(cliente: Clientes):void{
-    localStorage.setItem("id",cliente.idClient.toString());
+  deleteClient(cliente: Clientes) {
+    this.service.deleteClient(cliente.idClient)
+      .subscribe(
+        data => {
+        console.log(data);                  
+})
+
+this.ObtenerClientes(); 
+ }
+
+  Editar(cliente:Clientes):void{
+    localStorage.setItem("_id",cliente.idClient.toString());
     this.router.navigate(["edit"]);
   }
 
-  Delete(cliente: Clientes){
-    this.service.deletePersona(cliente)
-    .subscribe(data=>{
-      this.clientes=this.clientes.filter(p=>p!==cliente);
-    })
-  }
+  
 
+  
+ 
 }
