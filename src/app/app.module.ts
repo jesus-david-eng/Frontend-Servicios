@@ -9,6 +9,7 @@ import { EditComponent } from './Persona/edit/edit.component';
 import {ServiceService} from '../app/Service/service.service'
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { VistasComponent } from './vistas/vistas.component';
 
 
 
@@ -18,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     ListarComponent,
     AddComponent,
     EditComponent,
+    VistasComponent,
   
   ],
   imports: [

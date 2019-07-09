@@ -1,12 +1,12 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3>Personas</h3>
+            <h3>Tabla Clientes</h3>
         </div>
 
         <div class="card-body">
-                 <table class="table table-hover">   
-                   <thead >   
+          <table class="table table-bordered table-striped">   
+                   <thead class="thead-dark">   
                        <tr>   
                          <th>Id</th> 
                          <th>Nombre cliente</th> 
@@ -19,8 +19,8 @@
                             <td>{{ cliente.idClient }}</td>
                             <td>{{ cliente.clientName}}</td>
                             <td>{{ cliente.productOwner}}</td>
-                            <button (click)="Editar(cliente)" class="btn btn-warning"> editar</button>
-                               <button (click)="deleteClient(cliente)"class="btn btn-danger" style="margin: 10px"> Delete</button>
+                            <button (click)="editar(cliente)" class="btn btn-warning" style="margin: 10px"> editar</button>
+                              <button (click)="deleteClient(cliente)"class="btn btn-danger" style="margin: 10px"> Delete</button>
                                
                         </tr>     
                      </tbody>

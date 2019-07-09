@@ -20,7 +20,7 @@ export class ListarComponent implements OnInit {
   }
 
   ObtenerClientes(){
-    this.service.getPersonas()
+    this.service.getClients()
     .subscribe(data=>{
        this.clientes=data;
     
@@ -28,16 +28,17 @@ export class ListarComponent implements OnInit {
   }
 
   deleteClient(cliente: Clientes) {
+    window.location.reload();
     this.service.deleteClient(cliente.idClient)
       .subscribe(
         data => {
         console.log(data);                  
 })
 
-this.ObtenerClientes(); 
+//this.ObtenerClientes(); 
  }
 
-  Editar(cliente:Clientes):void{
+  editar(cliente:Clientes):void{
     localStorage.setItem("_id",cliente.idClient.toString());
     this.router.navigate(["edit"]);
   }

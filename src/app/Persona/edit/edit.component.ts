@@ -16,19 +16,23 @@ export class EditComponent implements OnInit {
   ngOnInit() {
     this.Editar();
   }
+
   Editar(){
     let _id =localStorage.getItem("_id");
-    this.service.getPersonaId(_id)
+    this.service.getClientById(_id)
     .subscribe(data=>{
       this.cliente=data;
+
     })
   }
 
-  Actualizar(cliente:Clientes){
-    this.service.ActualizarCliente(cliente)
+  actualizar(cliente:Clientes){
+    this.service.updateClient(cliente)
       .subscribe(data =>{
          alert("se actualizo")
+         this.router.navigate(["listar"]);
           this.cliente=data;
+        
       }
         )
     }

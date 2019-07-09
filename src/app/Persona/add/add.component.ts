@@ -19,6 +19,7 @@ export class AddComponent implements OnInit {
   }
 
   public enviar(){
+    this.router.navigate(["listar"]);
     const cliente = {
       "clientName": this.clientName,
       "productOwner": this.productOwner

@@ -11,18 +11,18 @@ export class ServiceService {
   
   constructor(private http:HttpClient) { }
 
-  Url = 'http://localhost:8080/api'
+  Url = 'http://localhost:8080/clients'
   
 
-  getPersonas():Observable<Clientes[]>{
-    return this.http.get<Clientes[]>(this.Url) //obtener todos los clientes de http://localhost:8080/api
+  getClients():Observable<Clientes[]>{
+    return this.http.get<Clientes[]>(this.Url) //obtener todos los clientes de http://localhost:8080/clients
   }
 
   save(cliente){
-    return this.http.post(this.Url + "/guardar" , cliente)
+    return this.http.post(this.Url + "/addClient" , cliente)
   }
 
-  getPersonaId(id:String){
+  getClientById(id:String){
     return this.http.get<Clientes>(this.Url+"/search/"+id)
   }
   
@@ -30,7 +30,7 @@ export class ServiceService {
     return this.http.delete(this.Url+"/delete/"+_id)
   }
   
-  ActualizarCliente(cliente){
+  updateClient(cliente){
      return this.http.put<Clientes>(this.Url+'/'+cliente.idClient,cliente)
   }
   
